@@ -71,7 +71,6 @@ export type TRestaurantOwnerInsert = typeof restaurantOwnerTable.$inferInsert;
 export type TRestaurantOwnerSelect = typeof restaurantOwnerTable.$inferSelect;
  
  
-export type TCityStateRelation = typeof cityStateRelation.$
 // one to one rln
 //relation btn city(1) --> (1)state
 export const cityStateRelation = relations(cityTable, ({ one }) => ({
