@@ -1,0 +1,72 @@
+//default route
+
+
+//USERS ROUTES
+
+###
+GET http://localhost:5000/
+
+###
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/users/2
+
+###
+POST http://localhost:5000/auth/register
+content-type: application/json
+
+{
+    "fullName": "MadKing Ismail",
+  "email": "madking@example.com",
+  "password": "madking"
+}
+
+###
+POST http://localhost:5000/auth/login
+content-type: application/json
+
+{
+  "email": "madking@example.com",
+  "password": "madking"
+}
+
+###
+PUT http://localhost:5000/users/4
+content-type: application/json
+
+{
+    "fullName": "John Updated",
+  "email": "john@updated.com",
+  "password": "password3"
+}
+
+###
+DELETE http://localhost:5000/users/1
+
+
+//STATE ENDPOINT
+
+###
+GET http://localhost:5000/states
+
+###
+GET http://localhost:5000/states/1
+
+###
+POST http://localhost:5000/states
+content-type: application/json
+
+{
+    "stateName": "Denver",
+  "stateCode": "DN"
+}
+
+
+//CITIES ENDPOINT
+###
+GET http://localhost:5000/CitiesWithStates
+
+
+###
+GET http://localhost:5000/citystate/1

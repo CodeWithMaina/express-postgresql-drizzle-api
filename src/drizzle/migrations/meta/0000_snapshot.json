@@ -1,0 +1,320 @@
+{
+  "id": "de43c87f-7428-4982-9306-a366f414738d",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.cityTable": {
+      "name": "cityTable",
+      "schema": "",
+      "columns": {
+        "cityId": {
+          "name": "cityId",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "cityName": {
+          "name": "cityName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "stateId": {
+          "name": "stateId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "cityTable_stateId_stateTable_stateId_fk": {
+          "name": "cityTable_stateId_stateTable_stateId_fk",
+          "tableFrom": "cityTable",
+          "tableTo": "stateTable",
+          "columnsFrom": [
+            "stateId"
+          ],
+          "columnsTo": [
+            "stateId"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.restaurantOwnerTable": {
+      "name": "restaurantOwnerTable",
+      "schema": "",
+      "columns": {
+        "restaurantOwnerId": {
+          "name": "restaurantOwnerId",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "restaurantId": {
+          "name": "restaurantId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ownerId": {
+          "name": "ownerId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "restaurantOwnerTable_restaurantId_restaurantTable_restaurantId_fk": {
+          "name": "restaurantOwnerTable_restaurantId_restaurantTable_restaurantId_fk",
+          "tableFrom": "restaurantOwnerTable",
+          "tableTo": "restaurantTable",
+          "columnsFrom": [
+            "restaurantId"
+          ],
+          "columnsTo": [
+            "restaurantId"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "restaurantOwnerTable_ownerId_userTable_userId_fk": {
+          "name": "restaurantOwnerTable_ownerId_userTable_userId_fk",
+          "tableFrom": "restaurantOwnerTable",
+          "tableTo": "userTable",
+          "columnsFrom": [
+            "ownerId"
+          ],
+          "columnsTo": [
+            "userId"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.restaurantTable": {
+      "name": "restaurantTable",
+      "schema": "",
+      "columns": {
+        "restaurantId": {
+          "name": "restaurantId",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "restaurantName": {
+          "name": "restaurantName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "streetAddress": {
+          "name": "streetAddress",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "zipCode": {
+          "name": "zipCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cityId": {
+          "name": "cityId",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "restaurantTable_cityId_cityTable_cityId_fk": {
+          "name": "restaurantTable_cityId_cityTable_cityId_fk",
+          "tableFrom": "restaurantTable",
+          "tableTo": "cityTable",
+          "columnsFrom": [
+            "cityId"
+          ],
+          "columnsTo": [
+            "cityId"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.stateTable": {
+      "name": "stateTable",
+      "schema": "",
+      "columns": {
+        "stateId": {
+          "name": "stateId",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "stateName": {
+          "name": "stateName",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "stateCode": {
+          "name": "stateCode",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.userTable": {
+      "name": "userTable",
+      "schema": "",
+      "columns": {
+        "userId": {
+          "name": "userId",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "fullName": {
+          "name": "fullName",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "name": "email",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "password": {
+          "name": "password",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "userType": {
+          "name": "userType",
+          "type": "userType",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'member'"
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {
+    "public.userType": {
+      "name": "userType",
+      "schema": "public",
+      "values": [
+        "member",
+        "admin"
+      ]
+    }
+  },
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

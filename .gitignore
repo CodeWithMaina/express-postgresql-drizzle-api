@@ -1,0 +1,60 @@
+# General development files
+*.log
+*.swp
+*.env
+.DS_Store
+.idea/
+.vscode/
+*.code-workspace
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript and build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# PostgreSQL
+postgres-data/
+*.sql
+*.dump
+pgdata/
+
+# Drizzle specific
+.drizzle/
+migrations/*.sql
+!migrations/*.ts
+
+# Testing
+coverage/
+.nyc_output/
+
+# Debug files
+*.pid
+*.seed
+
+# Local development files
+*.local
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
