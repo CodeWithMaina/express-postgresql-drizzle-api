@@ -17,9 +17,9 @@ POST http://localhost:5000/auth/register
 content-type: application/json
 
 {
-    "fullName": "MadKing Ismail",
-  "email": "madking@example.com",
-  "password": "madking"
+  "fullName": "Meen Ismail",
+  "email": "meen@example.com",
+  "password": "meen"
 }
 
 ###

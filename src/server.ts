@@ -5,6 +5,7 @@ import { userRouter } from "./users/user.route";
 import { stateRouter } from "./state/state.route";
 import { cityRouter } from "./city/city.route";
 import { authRouter } from "./auth/auth.route";
+import { rateLimiterMiddleware } from "./middleware/rateLimiter";
  
 dotenv.config()
  
@@ -16,7 +17,8 @@ const PORT = process.env.PORT || 5000
 //Basic MIddleware
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(logger)
+app.use(logger);
+app.use(rateLimiterMiddleware);
  
 //default route
 app.get('/',(req,res:Response)=>{
